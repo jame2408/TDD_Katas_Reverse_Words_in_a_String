@@ -1,4 +1,8 @@
-﻿namespace ReverseWordsTest
+﻿using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace ReverseWordsTest
 {
     internal class ReverseWords
     {
@@ -8,7 +12,9 @@
 
         public string GetReverseWords(string words)
         {
-            return words;
+            var splitedWords = words.Split(' ');
+
+            return string.Join(" ", splitedWords.Reverse());
         }
     }
 }
