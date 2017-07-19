@@ -7,8 +7,12 @@ namespace ReverseWordsTest
     public class ReverseWordsTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Input_one_word_is_HELLO_should_return_HELLO()
         {
+            var words = "HELLO";
+            var target = new ReverseWords();
+            var actual = target.GetReverseWords(words);
+            Assert.AreEqual("HELLO", actual);
         }
     }
 }
