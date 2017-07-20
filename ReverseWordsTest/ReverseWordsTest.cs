@@ -24,6 +24,12 @@ namespace ReverseWordsTest
             ReversedWordsShouldBe(words: " HELLO WORLD  ", expected: "WORLD HELLO");
         }
 
+        [TestMethod]
+        public void Input_multi_space_between_word_and_word_should_return_one_space()
+        {
+            ReversedWordsShouldBe(words: "  HELLO   WORLD ", expected: "WORLD HELLO");
+        }
+
         private void ReversedWordsShouldBe(string words, string expected)
         {
             var target = new ReverseWords();
