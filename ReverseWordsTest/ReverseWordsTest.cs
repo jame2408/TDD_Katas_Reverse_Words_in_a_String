@@ -23,5 +23,14 @@ namespace ReverseWordsTest
             var actual = target.GetReverseWords(words);
             Assert.AreEqual("WORLD HELLO", actual);
         }
+
+        [TestMethod]
+        public void Input_words_but_head_and_tail_have_space_should_return_not_space()
+        {
+            var words = " HELLO WORLD  ";
+            var target = new ReverseWords();
+            var actual = target.GetReverseWords(words);
+            Assert.AreEqual("WORLD HELLO", actual);
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace ReverseWordsTest
     {
         public string GetReverseWords(string words)
         {
-            return string.Join(" ", words.Split(' ').Reverse());
+            return string.Join(" ", words.Trim().Split(' ').Reverse());
         }
     }
 }
