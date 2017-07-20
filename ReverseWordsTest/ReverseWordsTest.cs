@@ -9,28 +9,26 @@ namespace ReverseWordsTest
         [TestMethod]
         public void Input_one_word_is_HELLO_should_return_HELLO()
         {
-            var words = "HELLO";
-            var target = new ReverseWords();
-            var actual = target.GetReverseWords(words);
-            Assert.AreEqual("HELLO", actual);
+            ReversedWordsShouldBe(words: "HELLO", expected: "HELLO");
         }
 
         [TestMethod]
         public void Input_two_words_are_HELLO_and_WORLD_should_return_WORLD_and_HELLO()
         {
-            var words = "HELLO WORLD";
-            var target = new ReverseWords();
-            var actual = target.GetReverseWords(words);
-            Assert.AreEqual("WORLD HELLO", actual);
+            ReversedWordsShouldBe(words: "HELLO WORLD", expected: "WORLD HELLO");
         }
 
         [TestMethod]
         public void Input_words_but_head_and_tail_have_space_should_return_not_space()
         {
-            var words = " HELLO WORLD  ";
+            ReversedWordsShouldBe(words: " HELLO WORLD  ", expected: "WORLD HELLO");
+        }
+
+        private void ReversedWordsShouldBe(string words, string expected)
+        {
             var target = new ReverseWords();
             var actual = target.GetReverseWords(words);
-            Assert.AreEqual("WORLD HELLO", actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
